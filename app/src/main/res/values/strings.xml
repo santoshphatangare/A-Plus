@@ -1,0 +1,10 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">A-Plus</string>
+
+    <!-- Menu Strings -->
+    <string name="action_change_class">Change Class</string>
+
+    <!-- Activity Labels Strings -->
+    <string name="title_activity_choose_class">Choose Class</string>
+</resources>
