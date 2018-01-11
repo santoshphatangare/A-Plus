@@ -7,4 +7,9 @@
 
     <!-- Activity Labels Strings -->
     <string name="title_activity_choose_class">Choose Class</string>
+    <string name="title_activity_login">Create Account</string>
+    <string name="title_activity_activate">Activate Account</string>
+    <string name="title_activity_chapters">Chapters</string>
+    <string name="title_activity_reader">ReaderActivity</string>
+    <string name="title_activity_extra">Extra Knowledge</string>
 </resources>

@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.ssl.san.a_plus.adapters.ClassListAdapter;
 import com.ssl.san.a_plus.beans.ClassBean;
 import com.ssl.san.a_plus.response.ClassListResponse;
 import com.ssl.san.a_plus.utils.AppData;
@@ -54,8 +55,13 @@ public class ChooseClassActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        HomeActivity.classChooseSkip = true;
-        super.onBackPressed();
+        AppData appData = new AppData(this);
+        if(appData.getClassId() == 0){
+            setResult(HomeActivity.RESULT_ERROR);
+        } else {
+            setResult(HomeActivity.RESULT_SUCCESS);
+        }
+        finish();
     }
 
     @Override

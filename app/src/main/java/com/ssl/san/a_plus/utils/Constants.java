@@ -8,4 +8,6 @@ public class Constants {
     public static final String SUCCESS = "SUCCESS";
     public static final String ERROR = "ERROR";
     public static final String SERVER_ERROR = "SERVER_ERROR";
+    public static final String INACTIVE = "INACTIVE";
+    public static final String OTHER = "OTHER";
 }

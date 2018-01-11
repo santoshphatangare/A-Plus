@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_home"
+    android:id="@+id/content_chapters"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,12 +10,20 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.ssl.san.a_plus.HomeActivity"
-    tools:showIn="@layout/activity_home">
+    tools:context="com.ssl.san.a_plus.ChaptersActivity"
+    tools:showIn="@layout/activity_chapters">
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/subjectList">
+        android:id="@+id/chpterList">
 
     </ListView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="NO CHAPTERS FOUND"
+        android:textSize="25sp"
+        android:visibility="gone"
+        android:id="@+id/noChaptersTV"/>
 </RelativeLayout>

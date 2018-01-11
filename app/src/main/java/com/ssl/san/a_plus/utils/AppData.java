@@ -10,6 +10,8 @@ import android.content.SharedPreferences;
 public class AppData {
     public static final String SP_NAME = "AP_SP";
     public static final String CLASS_ID = "CLASS_ID";
+    public static final String MOBILE_NO = "MOBILE_NO";
+    public static final String PASSWORD = "PASSWORD";
     Context context;
     SharedPreferences sp;
     public AppData(Context context){
@@ -25,5 +27,25 @@ public class AppData {
 
     public int getClassId(){
         return sp.getInt(CLASS_ID, 0);
+    }
+
+    public void setMobileNo(String mobileNo){
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString(MOBILE_NO, mobileNo);
+        editor.commit();
+    }
+
+    public String getMobileNo(){
+        return sp.getString(MOBILE_NO,"");
+    }
+
+    public void setPassword(String password){
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString(PASSWORD, password);
+        editor.commit();
+    }
+
+    public String getPassword(){
+        return sp.getString(PASSWORD,"");
     }
 }

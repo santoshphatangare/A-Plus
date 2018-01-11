@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ssl.san.a_plus">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/app_icon"
@@ -21,6 +23,26 @@
         <activity
             android:name=".ChooseClassActivity"
             android:label="@string/title_activity_choose_class"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ActivateActivity"
+            android:label="@string/title_activity_activate"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ChaptersActivity"
+            android:label="@string/title_activity_chapters"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ReaderActivity"
+            android:label="@string/title_activity_reader"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ExtraActivity"
+            android:label="@string/title_activity_extra"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

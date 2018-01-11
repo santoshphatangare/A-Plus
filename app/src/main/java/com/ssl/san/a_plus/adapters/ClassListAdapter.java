@@ -1,4 +1,4 @@
-package com.ssl.san.a_plus;
+package com.ssl.san.a_plus.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.ssl.san.a_plus.ChooseClassActivity;
+import com.ssl.san.a_plus.R;
 import com.ssl.san.a_plus.beans.ClassBean;
 import com.ssl.san.a_plus.utils.AppData;
 

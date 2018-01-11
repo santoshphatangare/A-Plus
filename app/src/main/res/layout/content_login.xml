@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.ssl.san.a_plus.LoginActivity"
+    tools:showIn="@layout/activity_login"
+    android:orientation="vertical"
+    android:gravity="center_horizontal|center_vertical">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/app_icon"
+        android:layout_marginBottom="10dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text"
+        android:padding="10dp"
+        android:hint="Mobile No."
+        android:inputType="number"
+        android:digits="1234567890"
+        android:maxLength="10"
+        android:layout_marginBottom="10dp"
+        android:textSize="22sp"
+        android:id="@+id/mobileNo"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text"
+        android:padding="10dp"
+        android:hint="Name"
+        android:inputType="text"
+        android:layout_marginBottom="10dp"
+        android:textSize="22sp"
+        android:id="@+id/userName"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text"
+        android:padding="10dp"
+        android:hint="password"
+        android:inputType="text"
+        android:layout_marginBottom="10dp"
+        android:textSize="22sp"
+        android:maxLength="10"
+        android:id="@+id/password"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:onClick="makeAccount"/>
+</LinearLayout>
