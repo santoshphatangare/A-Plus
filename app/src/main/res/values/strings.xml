@@ -12,4 +12,5 @@
     <string name="title_activity_chapters">Chapters</string>
     <string name="title_activity_reader">ReaderActivity</string>
     <string name="title_activity_extra">Extra Knowledge</string>
+    <string name="title_activity_que_paper_list">QuePaperListActivity</string>
 </resources>

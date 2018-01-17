@@ -11,7 +11,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import com.google.gson.Gson;
 import com.ssl.san.a_plus.adapters.SubjectListAdapter;
@@ -37,6 +40,8 @@ public class HomeActivity extends BaseActivity {
     ListView subjectList;
     SubjectListAdapter adapter;
     int classId = 0;
+    RelativeLayout noSubjectsLL;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +60,6 @@ public class HomeActivity extends BaseActivity {
     }
 
     public void checkClass(){
-
         if(appData.getClassId() == 0){
             startActivityForResult(new Intent(getApplicationContext(), ChooseClassActivity.class),REQUEST_CHOOSE_CLASS);
         } else {
@@ -70,7 +74,7 @@ public class HomeActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.action_change_class){
-            startActivity(new Intent(getApplicationContext(), ChooseClassActivity.class));
+            startActivityForResult(new Intent(getApplicationContext(), ChooseClassActivity.class), REQUEST_CHOOSE_CLASS);
         }
         return true;
     }
@@ -113,6 +117,7 @@ public class HomeActivity extends BaseActivity {
                 Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
                 setSupportActionBar(toolbar);
                 subjectList = (ListView) findViewById(R.id.subjectList);
+                noSubjectsLL = (RelativeLayout) findViewById(R.id.noSubjectsLL);
                 adapter = new SubjectListAdapter(this, R.layout.subject_row, subjects);
                 subjectList.setAdapter(adapter);
                 checkClass();
@@ -121,14 +126,24 @@ public class HomeActivity extends BaseActivity {
                 intent.putExtra("user",new Gson().toJson(loginResponse.getUser()));
                 startActivityForResult(intent, REQUEST_ACTIVATE);
             } else if(loginResponse.getCode().equals(Constants.OTHER)) {
-                startActivityForResult(new Intent(getApplicationContext(), ActivateActivity.class),REQUEST_ACTIVATE);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                intent.putExtra("isOnOther",true);
+                startActivityForResult(intent, REQUEST_NEW_ACC);
             } else {
                 startActivityForResult(new Intent(getApplicationContext(), LoginActivity.class),REQUEST_NEW_ACC);
             }
         } else if(url.equals(URL.SUBJECT_LIST)){
             SubjectResponse subjectResponse = new Gson().fromJson(response, SubjectResponse.class);
             if(subjectResponse.getCode().equals(Constants.SUCCESS)){
-                subjects.addAll(subjectResponse.getSubjects());
+                subjects.clear();
+                if(subjectResponse.getSubjects().size() == 0){
+                    noSubjectsLL.setVisibility(View.VISIBLE);
+                    subjectList.setVisibility(View.GONE);
+                } else {
+                    subjects.addAll(subjectResponse.getSubjects());
+                    noSubjectsLL.setVisibility(View.GONE);
+                    subjectList.setVisibility(View.VISIBLE);
+                }
                 adapter.notifyDataSetChanged();
             }
         }

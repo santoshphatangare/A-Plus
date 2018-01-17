@@ -43,6 +43,10 @@
         <activity
             android:name=".ExtraActivity"
             android:label="@string/title_activity_extra"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".QuePaperListActivity"
+            android:label="@string/title_activity_que_paper_list"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

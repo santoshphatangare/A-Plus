@@ -15,27 +15,8 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/chpterList"
-            android:layout_above="@+id/questionPaperBtn">
-
+            android:id="@+id/questionPaperList">
         </ListView>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_alignParentBottom="true"
-            android:orientation="vertical"
-            android:id="@+id/questionPaperBtn"
-            android:background="@color/colorPrimary">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textAllCaps="true"
-                android:text="Question papers"
-                android:textSize="20sp"
-                android:onClick="showQuestionPapers"/>
-        </LinearLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -45,7 +26,7 @@
         android:background="@color/white"
         android:gravity="center"
         android:visibility="gone"
-        android:id="@+id/noChaptersLL">
+        android:id="@+id/noQuePaperLL">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -53,7 +34,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NO CHAPTERS FOUND"
+            android:text="NO QUESTION PAPERS FOUND"
             android:textSize="30dp"
             android:textColor="@color/colorPrimary"
             android:layout_alignParentBottom="true"

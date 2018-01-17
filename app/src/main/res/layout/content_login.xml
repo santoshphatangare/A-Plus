@@ -62,4 +62,12 @@
         android:textColor="@color/white"
         android:textSize="22sp"
         android:onClick="makeAccount"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tou are login on other device, will be log out after login here."
+        android:gravity="center"
+        android:padding="10dp"
+        android:id="@+id/otherMessage"
+        android:visibility="gone"/>
 </LinearLayout>

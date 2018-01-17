@@ -14,4 +14,5 @@ public class URL {
     public static final String WIKI = "/wiki.php";
     public static final String VIDEOS = "/videos.php";
     public static final String ACTIVATE_REQUEST = "/activate.php";
+    public static final String QUE_PAPERS = ".questionPapers.php";
 }

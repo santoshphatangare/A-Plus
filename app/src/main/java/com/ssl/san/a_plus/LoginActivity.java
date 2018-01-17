@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -22,7 +23,7 @@ import com.ssl.san.a_plus.utils.URL;
 public class LoginActivity extends BaseActivity {
 
     EditText mobileNo, userName, password;
-
+    TextView otherMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,11 @@ public class LoginActivity extends BaseActivity {
         mobileNo = (EditText) findViewById(R.id.mobileNo);
         userName = (EditText) findViewById(R.id.userName);
         password = (EditText) findViewById(R.id.password);
-        //HomeActivity.accVisited = true;
+        otherMessage = (TextView) findViewById(R.id.otherMessage);
+        boolean isOnOther = getIntent().getBooleanExtra("isOnOther", false);
+        if(isOnOther){
+            otherMessage.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
